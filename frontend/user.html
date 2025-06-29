@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <img src="assets/logo.png" alt="Parcel System Logo" class="logo" />
+    <h2>📦 User Dashboard</h2>
+
+    <button onclick="toggleTheme()">Toggle Dark Mode</button>
+
+    <div id="login-section">
+      <input type="text" id="username" placeholder="Enter Name" />
+      <input type="text" id="matric" placeholder="Enter Matric Number" />
+      <button onclick="userLogin()">Login</button>
+    </div>
+
+    <div id="user-section" style="display: none;">
+      <p id="welcome"></p>
+
+      <h3>Track Your Parcel</h3>
+      <input type="text" id="track-number" placeholder="Tracking Number" />
+      <button onclick="searchParcel()">Search Parcel</button>
+      <pre id="track-result"></pre>
+
+      <h3>My Parcel History</h3>
+      <button onclick="loadHistory()">View History</button>
+      <div id="history"></div>
+
+      <h3>Estimated Pickup Times</h3>
+      <button onclick="loadPickupTimes()">View Pickup Times</button>
+      <div id="pickup-times"></div>
+
+      <h3>Profile Summary</h3>
+      <button onclick="loadSummary()">View Summary</button>
+      <pre id="summary"></pre>
+
+      <h3>Change Delivery Method (Pending Parcels)</h3>
+      <input type="text" id="change-track" placeholder="Tracking Number" />
+      <select id="change-method">
+        <option value="Pickup">Pickup (Free)</option>
+        <option value="Delivery">Delivery (RM1)</option>
+      </select>
+      <button onclick="changeDelivery()">Update Method</button>
+      <div id="change-result"></div>
+
+      <h3>Submit Feedback</h3>
+      <input type="number" id="rating" placeholder="Rating 1-5" />
+      <textarea id="comment" placeholder="Your comment..."></textarea>
+      <button onclick="submitFeedback()">Submit</button>
+      <div id="feedback-result"></div>
+
+      <br /><button onclick="window.location.href='index.html'">Logout</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <div id="toast" class="toast">This is a message</div>
+</body>
+</html>

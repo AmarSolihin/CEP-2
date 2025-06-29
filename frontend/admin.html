@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <img src="assets/logo.png" alt="Parcel System Logo" class="logo" />
+    <h2>🛠️ Admin Panel</h2>
+    <button onclick="toggleTheme()">Toggle Dark Mode</button>
+
+    <div id="admin-login">
+      <input type="text" id="admin-user" placeholder="Admin Username" />
+      <input type="password" id="admin-pass" placeholder="Admin Password" />
+      <button onclick="adminLogin()">Login</button>
+    </div>
+
+  <div id="admin-section" style="display: none;">
+    <div class="tab-buttons">
+        <button onclick="showTab('add-parcel')">Add Parcel</button>
+        <button onclick="showTab('view-parcels')">View All Parcels</button>
+        <button onclick="showTab('pickup')">Mark Pickup</button>
+        <button onclick="showTab('export')">Export to CSV</button>
+        <button onclick="showTab('feedback')">View Feedback</button>
+        <button onclick="showTab('clear')">Clear All</button>
+    </div>
+
+    <div id="add-parcel" class="tab-section">
+        <h3>Add New Parcel</h3>
+        <input type="text" id="p-name" placeholder="Recipient Name" />
+        <input type="text" id="p-matric" placeholder="Matric Number" />
+        <input type="text" id="p-tracking" placeholder="Tracking Number" />
+        <select id="p-building">
+            <option>Kasturi</option><option>Lekir</option><option>Lekiu</option>
+            <option>Jebat</option><option>Tuah</option><option>Lestari</option>
+        </select>
+        <button onclick="addParcel()">Add Parcel</button>
+        <div id="add-result"></div>
+    </div>
+
+    <div id="view-parcels" class="tab-section" style="display:none;">
+        <h3>All Parcels</h3>
+
+        <label>Filter by Building:</label>
+        <select id="filter-building">
+            <option value="">All</option>
+            <option>Kasturi</option>
+            <option>Lekir</option>
+            <option>Lekiu</option>
+            <option>Jebat</option>
+            <option>Tuah</option>
+            <option>Lestari</option>
+        </select>
+
+        <label>Filter by Status:</label>
+        <select id="filter-status">
+            <option value="">All</option>
+            option>Pending</option>
+            <option>Pickup Ready</option>
+            <option>Delivered</option>
+            <option>Picked Up</option>
+        </select>
+
+        <button onclick="loadAllParcels()">Refresh</button>
+
+        <div id="parcel-list"></div>
+    </div>
+
+
+    <div id="pickup" class="tab-section" style="display:none;">
+        <h3>Mark Pickup Ready Parcels as Picked Up</h3>
+        <input type="text" id="pickup-track" placeholder="Tracking Number" />
+        <button onclick="markPickedUp()">Mark as Picked Up</button>
+        <div id="pickup-result"></div>
+    </div>
+
+    <div id="export" class="tab-section" style="display:none;">
+        <h3>Export to CSV</h3>
+        <button onclick="exportCSV()">Download CSV</button>
+    </div>
+
+    <div id="feedback" class="tab-section" style="display:none;">
+        <h3>View Feedback</h3>
+        <button onclick="loadFeedback()">Show Feedback</button>
+        <div id="feedback-list"></div>
+    </div>
+
+    <div id="clear" class="tab-section" style="display:none;">
+        <h3>Clear All Parcels</h3>
+        <button onclick="clearParcels()" style="background-color: red;">Clear Data</button>
+    </div>
+
+    <br />
+    <button onclick="window.location.href='index.html'">Logout</button>
+  </div>
+  <script src="js/main.js"></script>
+  <div id="toast" class="toast">This is a toast message</div>
+</body>
+</html>

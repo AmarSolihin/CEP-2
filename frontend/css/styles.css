@@ -1,0 +1,209 @@
+:root {
+  --bg-color: #f1f1f1;
+  --text-color: #111;
+  --container-bg: white;
+  --button-bg: #1e60e5;
+  --button-hover: #1565c0;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #eee;
+  --container-bg: #1e1e1e;
+  --button-bg: #1e60e5;
+  --button-hover: #0097a7;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  padding: 40px;
+  background-color: var(--container-bg);
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+input, select, textarea {
+  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  margin: 10px 5px 10px 0;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  background-color: var(--button-bg);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+}
+
+pre {
+  white-space: pre-wrap;
+  background: var(--pre-bg, #eee);
+  color: var(--pre-text, #111);
+  padding: 10px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+body.dark pre {
+  --pre-bg: #222;
+  --pre-text: #f1f1f1;
+}
+
+.tab-buttons {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tab-buttons button {
+  flex: 1;
+  min-width: 120px;
+}
+
+.tab-section {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.parcel-card {
+  background-color: var(--pre-bg, #eee);
+  color: var(--pre-text, #111);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 10px 0;
+}
+
+body.dark .parcel-card {
+  --pre-bg: #222;
+  --pre-text: #f1f1f1;
+}
+
+.status-label {
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background-color: #ddd;
+}
+
+body.dark .status-label {
+  background-color: #333;
+}
+
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #323232;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 16px;
+  position: fixed;
+  z-index: 999;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.5s ease, bottom 0.5s ease;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .tab-buttons {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  input, select, textarea, button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  pre, .parcel-card {
+    font-size: 14px;
+  }
+}
+
+.logo {
+  max-width: 300px;
+  margin-bottom: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#track-result {
+  background-color: var(--pre-bg, #eee);
+  color: var(--pre-text, #111);
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.parcel-card {
+  background-color: var(--pre-bg, #eee);
+  color: var(--pre-text, #111);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+body.dark .parcel-card {
+  --pre-bg: #222;
+  --pre-text: #f1f1f1;
+}
+
+#summary {
+  background-color: var(--pre-bg, #eee);
+  color: var(--pre-text, #111);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+body.dark #summary {
+  --pre-bg: #222;
+  --pre-text: #f1f1f1;
+}
